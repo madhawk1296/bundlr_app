@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '55xl': '3.5rem',
+      },
+      backgroundColor: {
+        'brand-blue': '#22A2E3',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

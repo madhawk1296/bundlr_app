@@ -9,15 +9,37 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^1.0.0",
+    "@subsquid/archive-registry": "^2.1.14",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "alchemy": "^0.0.8",
+    "alchemy-sdk": "^2.8.3",
+    "api": "^5.0.8",
     "autoprefixer": "10.4.14",
+    "bluebird": "^3.7.2",
+    "bn.js": "^5.2.1",
+    "ethers": "^6.3.0",
+    "fs": "^0.0.1-security",
+    "markdown-to-jsx": "^7.2.0",
+    "mongodb": "5.4",
+    "mongodb-uri": "^0.9.7",
     "next": "13.4.1",
+    "numeral": "^2.0.6",
+    "opensea-js": "^5.0.0",
+    "pino-pretty": "^10.0.0",
     "postcss": "8.4.23",
     "react": "18.2.0",
+    "react-apple-emojis": "^2.2.1",
     "react-dom": "18.2.0",
+    "react-slick": "^0.29.0",
+    "simplehash-api": "^0.1.10",
+    "slick-carousel": "^1.8.1",
+    "swr": "^2.1.5",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "viem": "^0.3.33",
+    "wagmi": "^1.0.5"
   }
 }
