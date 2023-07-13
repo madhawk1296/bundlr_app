@@ -9,8 +9,6 @@ export default function Tabs() {
     return (
         <div className="relative w-full h-[50px] flex gap-10 items-center border-b-2 border-gray-200">
             <Tab setActiveTab={setActiveTab} value="bundles" title="Bundles" active={activeTab == 'bundles'} />
-            <Tab setActiveTab={setActiveTab} value="items" title="Items" active={activeTab == 'items'} />
-            <Tab setActiveTab={setActiveTab} value="activity" title="Activity" active={activeTab == 'activity'} />
         </div>
     )
 }

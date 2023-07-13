@@ -1,6 +1,4 @@
 export default function getCurrencyName(currency: string): string {
-  console.log(currency)
-
   switch (currency) {
     case 'Wrapped Ether':
       return 'eth'

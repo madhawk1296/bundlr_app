@@ -4,7 +4,7 @@ export default function sortList(list, options) {
     const { sort: { value }, isAscending } = options;
 
     const compareFunctions = {
-        'name': (a, b) => a.name.localeCompare(b.name),
+        'name': (a, b) => a.name?.localeCompare(b.name),
         'floor_price': (a, b) => {
             return getFloorPrice(a.floorPrices) - getFloorPrice(b.floorPrices)
         },

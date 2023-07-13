@@ -1,9 +1,8 @@
 import Collections from './Collections';
 import Options from './Options';
 import getOrUpdateUserCollections from '../../../lib/getOrUpdateUserCollections';
-import { usePathname } from 'next/navigation';
-import gatherCurrencies from '../../../lib/gatherCurrencies';
 import getOrUpdateCurrencies from '../../../lib/getOrUpdateCurrencies';
+import filterUserCollections from '../../../lib/filterUserCollections';
 
 export default async function Page({ params: { userId } }) {
     const user = await getOrUpdateUserCollections(userId);
@@ -12,8 +11,7 @@ export default async function Page({ params: { userId } }) {
     const currencies = await getOrUpdateCurrencies();
 
     // hide collections with no image
-    const collections = user && user.collections.filter(collection => collection.imageUrl != null)
-
+    const collections = user && filterUserCollections(user);
 
     return (
         <div className="relative w-full flex flex-col gap-2">

@@ -8,7 +8,7 @@ export default function CreateListingLink() {
 
     return (
         <Link href={`/createListing/${address ? address : null}`}>
-            <button className='w-[200px] h-[50px] bg-[#22A2E3] text-white font-bold text-xl rounded-xl mx-auto shadow-black hover:shadow-md'>Create a Listing</button>
+            <button className='md:w-[200px] md:h-[50px] bg-[#22A2E3] text-white font-bold py-[10px] px-[10px] text-lg md:text-xl rounded-xl mx-auto shadow-black hover:shadow-md'>Create a Listing</button>
         </Link>
     )
 }

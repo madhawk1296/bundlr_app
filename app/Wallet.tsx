@@ -3,8 +3,13 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import formatNumber from '../lib/formatNumber';
 import WalletIcon from '../components/icons/Wallet';
+import WalletConnected from './WalletConnected';
+import { useContext } from 'react';
+import MobileContext from '../components/hooks/MobileContext';
 
-export default function Wallet() {     
+export default function Wallet() {   
+    const { isMobile } = useContext(MobileContext);
+    
     return (
         <ConnectButton.Custom>
             {({
@@ -25,33 +30,26 @@ export default function Wallet() {
                 chain;
 
                 return (
-                <div className='relative border-2 border-gray-200 rounded-xl min-w-[130px] h-[40px] text-sm font-semibold text-gray-700 cursor-pointer hover:shadow-sm'>
+                <div className='relative border-2 border-gray-200 rounded-xl px-[7px] md:min-w-[130px] h-[40px] text-sm font-semibold text-gray-700 cursor-pointer hover:shadow-sm'>
                     {(() => {
                     if (!connected) {
                         return (
-                        <button className='w-full h-full'  onClick={openConnectModal} type="button">
-                            Connect Wallet
+                        <button className='w-full h-full flex gap-2 justify-center items-center'  onClick={openConnectModal} type="button">
+                            Connect<span className='hidden md:flex flex-inline'> Wallet</span>
                         </button>
                         );
                     }
 
                     if (chain.unsupported) {
                         return (
-                        <button className='w-full h-full' onClick={openChainModal} type="button">
-                            Wrong network
+                        <button className='w-[60px] md:w-full h-full md:text-base text-xs truncate' onClick={openChainModal} type="button">
+                            {isMobile ? "Network!" : "Wrong network"}
                         </button>
                         );
                     }
 
                     return (
-                        <div className='flex flex-inline justify-center items-center gap-2 h-full w-full' onClick={openAccountModal}>
-                            <h1>
-                                {formatNumber(account.balanceFormatted, true)} ETH
-                            </h1>
-                            <div className='relative w-[22px]'>
-                                <WalletIcon />
-                            </div>
-                        </div>
+                        <WalletConnected account={account} />
                     );
                     })()}
                 </div>

@@ -10,18 +10,18 @@ import getOrUpdateCurrencies from '../../../../lib/getOrUpdateCurrencies';
 export default async function Page({ params: { userId, collectionId }}) {
     const collection = await getOrUpdateCollection(collectionId);
     const items = await getOrUpdateUserItems(userId, collectionId);
-
+    
     // currency info
     const currencies = await getOrUpdateCurrencies();
 
     return (
         <ListItemsProvider>
-            <div className="w-full flex gap-3 justify-evenly">
+            <div className="w-full flex gap-6 md:gap-3 flex-col md:flex-row md:justify-evenly">
                 <div className="w-full flex flex-col gap-6">
                     <CollectionInfo currencies={currencies} collection={collection} />
                     <Items currencies={currencies} collection={collection} items={items} />
                 </div>
-                <Summary />
+                <Summary collection={collection} />
             </div>
         </ListItemsProvider>
     )

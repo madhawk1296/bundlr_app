@@ -16,8 +16,6 @@ export default function ListOption({ value, setValue, title, type, minValue=null
             replacedValue = replaceInteger(value);
         }
 
-        console.log(replacedValue);0
-
         if(maxValue && replacedValue > maxValue) {
             setValue(maxValue);
         } else if (minValue && replacedValue < minValue) { 

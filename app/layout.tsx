@@ -21,7 +21,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Header />
-          <div className='relative w-full h-fit min-h-screen bg-white'>
+          <div className='relative w-full h-fit min-h-screen bg-white max-w-screen overflow-hidden'>
             {children}
           </div>
         </Providers>

@@ -62,7 +62,7 @@ export default function Item({ currencies, floorPrice, item }) {
     }
 
     return (
-        <div onClick={handleSelect} className={`relative w-[250px] h-fit rounded-xl transition-all duration-200 ${selected ? "border-[3px] border-blue-500 bg-blue-500" : "cursor-pointer border-2 border-gray-100"} shadow-sm hover:shadow-md`}>
+        <div onClick={handleSelect} className={`relative w-full md:w-[250px] h-fit rounded-xl transition-all duration-200 ${selected ? "border-[3px] border-blue-500 bg-blue-500" : "cursor-pointer border-2 border-gray-100"} shadow-sm hover:shadow-md`}>
             <div className="relative overflow-hidden rounded-lg">
                 <div className='relative aspect-square h-full'>
                     <Image alt={`Collection ${name}`} src={imageUrl ? imageUrl : '/no_image.jpeg'} width={250} height={250} priority={true} />     

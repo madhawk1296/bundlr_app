@@ -1,6 +1,4 @@
 export default async function fetchTreasureCollection(collectionId) {
-    const url = "https://api.thegraph.com/subgraphs/name/vinnytreasure/treasuremarketplace-fast-prod"
-    
     const query = `
     query {
         collection(id: "${collectionId}") {
@@ -17,7 +15,7 @@ export default async function fetchTreasureCollection(collectionId) {
     }
   `;
 
-    return (await (await fetch(url, {
+    return (await (await fetch(process.env.TREASURE_GRAPH_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query })

@@ -9,6 +9,7 @@ import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { arbitrum } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import Modals from '../components/modals/Modals';
+import MobileProvider from '../components/MobileProvider';
  
 const { chains, publicClient } = configureChains(
   [arbitrum],
@@ -31,9 +32,11 @@ export default function Providers({ children }) {
     return (
         <WagmiConfig config={config}>
           <RainbowKitProvider chains={chains}>
-              <Modals>
-                {children}
-              </Modals>
+              <MobileProvider>
+                <Modals>
+                  {children}
+                </Modals>
+              </MobileProvider>
           </RainbowKitProvider>
         </WagmiConfig>
       );

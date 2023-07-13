@@ -1,7 +1,7 @@
 import getTokenFloorPrice from "./getTokenFloorPrice";
 
-export default function standardizeUserItem(collection, userItem, balance, tokenListings) {
-    const { contract_address, token_id, name, description, image_url, external_url, created_date, status, contract } = userItem;
+export default function standardizeUserItem(collection, userItem, tokenListings) {
+    const { contract_address, token_id, name, description, image_url, external_url, created_date, status, contract, token_count } = userItem;
     const tokenStandard = contract?.type;
 
     const tokenFloorPrice = getTokenFloorPrice(tokenStandard, tokenListings);
@@ -16,7 +16,7 @@ export default function standardizeUserItem(collection, userItem, balance, token
         createdDate: created_date,
         status,
         tokenStandard,
-        balance,
+        balance: token_count,
         tokenFloorPrice
     }
 }

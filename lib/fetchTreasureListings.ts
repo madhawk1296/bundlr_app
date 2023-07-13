@@ -1,7 +1,6 @@
 import {Promise} from "bluebird";
 
 export default async function fetchTreasureListings() {
-    const url = "https://api.thegraph.com/subgraphs/name/vinnytreasure/treasuremarketplace-fast-prod"
     const querySize = 300;
 
     const startingPositions = [];
@@ -25,7 +24,7 @@ export default async function fetchTreasureListings() {
             }
             `;
         
-        const res = (await (await fetch(url, {
+        const res = (await (await fetch(process.env.TREASURE_GRAPH_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query })

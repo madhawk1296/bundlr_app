@@ -10,7 +10,7 @@ export default function Collections({ userId, currencies, collections }) {
     const sorted = sortList(collections, {sort, isAscending})
 
     return (
-        <div className="w-full flex flex-wrap gap-6">
+        <div className="w-full grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-6">
             {sorted && sorted.map((collection, index) => <Collection key={index} userId={userId} currencies={currencies} collection={collection} />)}
         </div>
     )

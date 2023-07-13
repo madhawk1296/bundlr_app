@@ -12,7 +12,7 @@ export default function Step({ value, title, active, link=null }) {
             <div className="relatve h-[60%]">
                 {value == 1 ? <One active={active} /> : <Two active={active} />}
             </div>
-            <h1 className={`text-lg font-bold transition-all duration-200 ${active ? "text-gray-700" : "text-gray-400"}`}>{title}</h1>
+            <h1 className={`text-sm md:text-lg font-bold transition-all duration-200 ${active ? "text-gray-700" : "text-gray-400"}`}>{title}</h1>
         </div>
     )
 

@@ -4,5 +4,5 @@ export default createContext({
     menuOpen: false, 
     openMenu: () => {}, 
     closeMenu: () => {},
-    updateSelectedItems: (items, currency) => {}
+    updateSelectedItems: (collection, items, currency) => {}
 })
