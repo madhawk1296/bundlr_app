@@ -1,4 +1,4 @@
-export default function(...args) {
-    return fetch(...args).then(res => res.json())
+export default function(url) {
+    return fetch(url).then(res => res.json())
 }
 
