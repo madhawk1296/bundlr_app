@@ -1,6 +1,7 @@
 import Header from './Header'
 import Providers from './Providers'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Bundlr - Buy in Bulk, Save in Bulk',
@@ -25,6 +26,7 @@ export default function RootLayout({
             {children}
           </div>
         </Providers>
+        <Analytics />
       </body>
     </html>
   )
